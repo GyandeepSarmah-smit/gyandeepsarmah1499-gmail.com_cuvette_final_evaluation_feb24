@@ -14,6 +14,6 @@ const toastSuccess = () => {
 }
 
 export const shareLink = (id) => {
-    navigator.clipboard.writeText(`https://quiz027.netlify.app/quizzes/play/${id}`);
+    navigator.clipboard.writeText(`https://gyandeepsarmah1499-gmail-com-cuvette-final-evaluation-feb24.vercel.app/quizzes/play/${id}`);
     toastSuccess();
 }
