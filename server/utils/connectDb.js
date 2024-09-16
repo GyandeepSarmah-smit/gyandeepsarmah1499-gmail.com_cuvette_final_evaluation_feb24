@@ -1,13 +1,23 @@
 const mongoose = require('mongoose')
 
+
+const port = process.env.PORT || 3000;
 const runServer = (app) => {
-    app.listen(process.env.PORT, () => {
-        console.log("Listening to port " + process.env.PORT);
+    app.listen(port, () => {
+        console.log("Listening to port " + port);
     })
 }
 
 const connectToDatabase = async (app) => {
-    await mongoose.connect(process.env.MONGO_URI);
+    mongoose.connect(
+        process.env.MONGO_URI
+    )
+    .then(function () {
+        console.log('Successfully connected to Database...');
+    })
+    .catch(function (err) {
+        console.log("Error while connecting to Database ",err);
+    });
     runServer(app);
 }
 

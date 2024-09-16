@@ -4,6 +4,7 @@ const quiz_url = import.meta.env.VITE_QUIZ_BACKEND_URL || 'http://localhost:3000
 
 
 
+
 export const getQuizzes = async() => {
     const options = {
         headers: {
